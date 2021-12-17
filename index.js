@@ -23,7 +23,7 @@ const generateReadme = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const promptReadMe = readmeData => {
     if (!readmeData) {
-        readneData = [];
+        readmeData = [];
     }
     return inquirer.prompt([
         {
@@ -106,10 +106,12 @@ const promptReadMe = readmeData => {
             }
         
         },
+        // have them only choose one license 
         {
             type: 'checkbox',
             name: 'license',
             message: 'Choose a license for your project',
+            choices: ['MIT', 'Apache', 'MPL'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
@@ -118,23 +120,51 @@ const promptReadMe = readmeData => {
                     return false;
                 }
             }
-        }
+        },
+        {
+            type: 'input',
+            name: 'Questions',
 
-    ]);
+        }
+    ]).then(questionData => {
+        readmeData.push(questionData);
+        // console.log(readmeData);
+        return readmeData;
+    });
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+// function writeToFile(fileName, data) {
     // Write file sync needs two parameters, first is path, second is what we're putting into the file
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
+//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+// }
+const writeFile = (mD, response) => {
+    return new Promise((resolve, reject) => {
+    fs.writeFile('./dist/readme.md', mD, err => {
+        if (err) {
+        reject(err);
+        return;
+        }
+
+        resolve({
+        ok: true,
+        message: 'File created!'
+        });
+    });
+    });
+};
+
 
 // TODO: Create a function to initialize app
 function init() {
-    promptReadMe().then((response)=>{
+    promptReadMe()
+        .then(response => {
+            console.log(response);
         // ReadMeMarkdown names the file, genrateReadme sends the data to the generateMarkdown util, ... (spread syntax) response looks into object
-        writeToFile('ReadMeMarkdown.md', generateReadme({...response}));
-    })
+        // writeToFile('ReadMeMarkdown.md', generateReadme({...response}));
+        let mD = generateReadme(response)
+        return writeFile(mD, response);
+        });
 }
 
 // Function call to initialize app
