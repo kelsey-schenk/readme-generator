@@ -21,7 +21,10 @@ const path = require('path');
 const generateReadme = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-function readmeQuestions () {
+const promptReadMe = readmeData => {
+    if (!readmeData) {
+        readneData = [];
+    }
     return inquirer.prompt([
         {
             type: 'input',
@@ -92,7 +95,7 @@ function readmeQuestions () {
         {
             type: 'input',
             name: 'test',
-            message: 'Enter test instructions for',
+            message: 'Enter test instructions for your project',
             validate: testInput => {
                 if (testInput) {
                     return true;
@@ -102,6 +105,19 @@ function readmeQuestions () {
                 }
             }
         
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Choose a license for your project',
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                    } else {
+                    console.log('Please choose a license for your project');
+                    return false;
+                }
+            }
         }
 
     ]);
@@ -115,7 +131,8 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    readmeQuestions().then((response)=>{
+    promptReadMe().then((response)=>{
+        // ReadMeMarkdown names the file, genrateReadme sends the data to the generateMarkdown util, ... (spread syntax) response looks into object
         writeToFile('ReadMeMarkdown.md', generateReadme({...response}));
     })
 }
