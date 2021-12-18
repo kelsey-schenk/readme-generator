@@ -6,7 +6,7 @@ function renderLicenseBadge(license, github, titleInput) {
   if(license === 'None') {
     return
   } else {
-    return `<img src="https://img.shields.io/github/license/${github}/${titleInput}?color=pink&label=${license}">`
+    return `<img src="https://img.shields.io/github/license/${github}/${titleInput}">`
   } 
 }
 

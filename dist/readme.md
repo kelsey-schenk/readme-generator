@@ -1,5 +1,5 @@
 
-  <img src="https://img.shields.io/github/license/kelsey-schenk/readme-generator?color=pink&label=MIT">
+  <img src="https://img.shields.io/github/license/kelsey-schenk/readme-generator">
 
   # Title
   readme-generator
