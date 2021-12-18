@@ -1,8 +1,8 @@
 
-  <img src="https://img.shields.io/github/license/kelsey-schenk/run-buddy?color=pink&label=MIT">
+  <img src="https://img.shields.io/github/license/kelsey-schenk/readme-generator?color=pink&label=MIT">
 
   # Title
-  run-buddy
+  readme-generator
 
   ## Description
   n
