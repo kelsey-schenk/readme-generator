@@ -1,15 +1,16 @@
 
+  <img src="https://img.shields.io/github/license/undefined/undefined?color=pink&label=undefined">
+
   # Title
-  no
+  RUn buddy
 
   ## Description
-  no
+  n
 
   # Table of Contents
 
-  * [Installation Instructions] (#instructions)
+  * [Instructions] (#instructions)
   * [Usage] (#usage)
-  * [Credits] (#credits)
   * [License] (#license)
   * [Badges] (#badges)
   * [Contributing] (#contribution)
@@ -18,14 +19,14 @@
 
 
 
-  ## Installation Instructions
-  no
+  ## Installation
+  n
 
   ## Usage
-  no
+  n
 
   ## Contribution Guidelines
-  no
+  n
 
   ## Tests
-  no
+  n

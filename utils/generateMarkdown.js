@@ -2,33 +2,40 @@
 // If there is no license, return an empty string
 
 
-function renderLicenseBadge(license) {
-  if(license[0] === 'None'){
-    return ''
-  }
-  if(license[0] === 'MIT') {
-    return '<img src="https://img.shields.io/github/license/kelsey-schenk/run-buddy?color=pink&label=MIT">'
-  }
-  if(license[0] === 'Apache') {
-    return '<img src="https://img.shields.io/github/license/kelsey-schenk/run-buddy?color=pink&label=Apache">'
-  }
-  if(license[0] === 'MPL') {
-    return '<img src="https://img.shields.io/github/license/kelsey-schenk/run-buddy?color=pink&label=MPL">'
+function renderLicenseBadge(license, github, titleInput) {
+  if(license === 'None') {
+    return
+  } else {
+    return `<img src="https://img.shields.io/github/license/${github}/${titleInput}?color=pink&label=${license}">`
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === 'None'){
+    return ``;
+  } else {
+    return `*[License](#license)`
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if(license === 'None') {
+    return ``;
+  } else {
+    return `#License`;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log(data)
   return `
+  ${renderLicenseBadge(data.license, data.github, data.title)}
+
   # Title
   ${data[0].title}
 
@@ -37,9 +44,8 @@ function generateMarkdown(data) {
 
   # Table of Contents
 
-  * [Installation Instructions] (#instructions)
+  * [Instructions] (#instructions)
   * [Usage] (#usage)
-  * [Credits] (#credits)
   * [License] (#license)
   * [Badges] (#badges)
   * [Contributing] (#contribution)
@@ -48,7 +54,7 @@ function generateMarkdown(data) {
 
 
 
-  ## Installation Instructions
+  ## Installation
   ${data[0].instructions}
 
   ## Usage
@@ -65,3 +71,6 @@ function generateMarkdown(data) {
 module.exports = generateMarkdown;
 
 // $(renderLicenseBadge);
+
+// Rendering the badges, getting them to appear on the page
+//  (just me) figure out why links aren't working

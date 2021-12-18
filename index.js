@@ -108,7 +108,7 @@ const promptReadMe = readmeData => {
         },
         // have them only choose one license 
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'license',
             message: 'Choose a license for your project',
             choices: ['None', 'MIT', 'Apache', 'MPL'],
@@ -123,13 +123,13 @@ const promptReadMe = readmeData => {
         },
         {
             type: 'input',
-            name: 'Questions',
-            message: 'Enter your GitHub Username and Email Address',
-            validate: questionsInput => {
-                if (questionsInput) {
+            name: 'github',
+            message: 'Enter your GitHub Username ',
+            validate: githubInput => {
+                if (githubInput) {
                     return true;
                 } else {
-                    console.log('Enter your contact information so you can be reached with questions');
+                    console.log('Enter your GitHub username');
                     return false;
                 }
             }
