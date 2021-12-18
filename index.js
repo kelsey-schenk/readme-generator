@@ -124,8 +124,18 @@ const promptReadMe = readmeData => {
         {
             type: 'input',
             name: 'Questions',
+            message: 'Enter your GitHub Username and Email Address',
+            validate: questionsInput => {
+                if (questionsInput) {
+                    return true;
+                } else {
+                    console.log('Enter your contact information so you can be reached with questions');
+                    return false;
+                }
+            }
 
         }
+
     ]).then(questionData => {
         readmeData.push(questionData);
         // console.log(readmeData);
@@ -135,9 +145,7 @@ const promptReadMe = readmeData => {
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {
-    // Write file sync needs two parameters, first is path, second is what we're putting into the file
-//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-// }
+    // Write file needs two parameters, first is path, second is what we're putting into the file
 const writeFile = (mD, response) => {
     return new Promise((resolve, reject) => {
     fs.writeFile('./dist/readme.md', mD, err => {

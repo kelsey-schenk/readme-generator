@@ -31,9 +31,12 @@ function generateMarkdown(data) {
   return `
   # Title
   ${data[0].title}
+
   ## Description
   ${data[0].description}
-  ## Table of Contents
+
+  # Table of Contents
+
   * [Installation Instructions] (#instructions)
   * [Usage] (#usage)
   * [Credits] (#credits)
@@ -42,12 +45,18 @@ function generateMarkdown(data) {
   * [Contributing] (#contribution)
   * [Questions] (#questions)
   * [Tests] (#test)
+
+
+
   ## Installation Instructions
   ${data[0].instructions}
+
   ## Usage
   ${data[0].usage}
+
   ## Contribution Guidelines
   ${data[0].contribution}
+
   ## Tests
   ${data[0].test}
 `;
