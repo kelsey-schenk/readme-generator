@@ -44,13 +44,13 @@ function generateMarkdown(data) {
 
   # Table of Contents
 
-  * [Instructions] (#instructions)
-  * [Usage] (#usage)
-  * [License] (#license)
-  * [Badges] (#badges)
-  * [Contributing] (#contribution)
-  * [Questions] (#questions)
-  * [Tests] (#test)
+  * [Instructions](#instructions)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Badges](#badges)
+  * [Contributing](#contribution)
+  * [Questions](#questions)
+  * [Tests](#test)
 
 
 
