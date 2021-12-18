@@ -37,10 +37,10 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license, data.github, data.title)}
 
   # Title
-  ${data[0].title}
+  ${data.title}
 
   ## Description
-  ${data[0].description}
+  ${data.description}
 
   # Table of Contents
 
@@ -55,16 +55,16 @@ function generateMarkdown(data) {
 
 
   ## Installation
-  ${data[0].instructions}
+  ${data.instructions}
 
   ## Usage
-  ${data[0].usage}
+  ${data.usage}
 
   ## Contribution Guidelines
-  ${data[0].contribution}
+  ${data.contribution}
 
   ## Tests
-  ${data[0].test}
+  ${data.test}
 `;
 }
 

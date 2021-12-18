@@ -21,10 +21,7 @@ const path = require('path');
 const generateReadme = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const promptReadMe = readmeData => {
-    if (!readmeData) {
-        readmeData = [];
-    }
+const promptReadMe = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -137,9 +134,8 @@ const promptReadMe = readmeData => {
         }
 
     ]).then(questionData => {
-        readmeData.push(questionData);
         // console.log(readmeData);
-        return readmeData;
+        return questionData;
     });
 };
 
@@ -167,7 +163,6 @@ const writeFile = (mD, response) => {
 function init() {
     promptReadMe()
         .then(response => {
-            console.log(response);
         // ReadMeMarkdown names the file, genrateReadme sends the data to the generateMarkdown util, ... (spread syntax) response looks into object
         // writeToFile('ReadMeMarkdown.md', generateReadme({...response}));
         let mD = generateReadme(response)

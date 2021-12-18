@@ -1,8 +1,8 @@
 
-  <img src="https://img.shields.io/github/license/undefined/undefined?color=pink&label=undefined">
+  <img src="https://img.shields.io/github/license/kelsey-schenk/Run Buddy?color=pink&label=MIT">
 
   # Title
-  RUn buddy
+  Run Buddy
 
   ## Description
   n
