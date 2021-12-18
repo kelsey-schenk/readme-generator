@@ -26,12 +26,12 @@ const promptReadMe = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'Please enter the title of your project',
+            message: 'Please enter the name of the project repo',
             validate: titleInput => {
                 if (titleInput) {
                     return true;
                     } else {
-                    console.log('Please enter a title for your project');
+                    console.log('Please enter the name of your project repo');
                     return false;
                 }
             }
