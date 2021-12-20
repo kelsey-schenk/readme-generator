@@ -50,21 +50,26 @@ function generateMarkdown(data) {
   * [Badges](#badges)
   * [Contributing](#contribution)
   * [Questions](#questions)
-  * [Tests](#test)
+  * [Test](#test)
 
 
 
-  ## Installation
+  ### Instructions
   ${data.instructions}
 
-  ## Usage
+  ### Usage
   ${data.usage}
 
-  ## Contribution Guidelines
+  ### Contribution Guidelines
   ${data.contribution}
 
-  ## Tests
+  ### Questions
+  ${data.github}
+  ${data.email}
+
+  ### Test
   ${data.test}
+
 `;
 }
 

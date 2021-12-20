@@ -103,7 +103,6 @@ const promptReadMe = () => {
             }
         
         },
-        // have them only choose one license 
         {
             type: 'list',
             name: 'license',
@@ -130,7 +129,19 @@ const promptReadMe = () => {
                     return false;
                 }
             }
-
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Enter your email address so you can be reached with questions');
+                    return false;
+                }
+            }
         }
 
     ]).then(questionData => {
