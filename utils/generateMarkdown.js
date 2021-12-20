@@ -76,6 +76,3 @@ function generateMarkdown(data) {
 module.exports = generateMarkdown;
 
 // $(renderLicenseBadge);
-
-// Rendering the badges, getting them to appear on the page
-//  (just me) figure out why links aren't working
