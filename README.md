@@ -7,5 +7,6 @@ Generates a quality Readme.md file for the user's project
 * Node.js
 
 # Demo
+https://watch.screencastify.com/v/pi15zSTBJWEnIeKsUO8B
 
 Made with ♥️ By Kelsey Schenk
