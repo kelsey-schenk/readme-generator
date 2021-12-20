@@ -5,7 +5,7 @@
   readme-generator
 
   ## Description
-  A generator that makes a quality readme using node 
+  A generator that creates a quality README file for the user's project
 
   # Table of Contents
 
@@ -20,7 +20,7 @@
 
 
   ### Instructions
-  Install node
+  n/a
 
   ### Usage
   n/a
